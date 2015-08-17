@@ -138,3 +138,13 @@ try:
     from .private import *  # pylint: disable=import-error
 except ImportError:
     pass
+
+
+# Celery things.
+
+## Broker settings.
+BROKER_URL = 'amqp://'
+
+# run tasks in-process for local development 
+CELERY_ALWAYS_EAGER = True
+
