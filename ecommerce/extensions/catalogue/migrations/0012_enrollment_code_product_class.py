@@ -8,6 +8,7 @@ def create_product_class(apps, schema_editor):
     """
     Create a default EnrollmentCode class with added attributes:
         - catalog (of courses)
+        - client
         - start date (of validity)
         - end date
         - type
@@ -36,6 +37,13 @@ def create_product_class(apps, schema_editor):
     )
     ProductAttribute.objects.create(
         product_class=enrollment_code,
+        name="Client",
+        code="client",
+        type="entity",
+        required=True
+    )
+    ProductAttribute.objects.create(
+        product_class=enrollment_code,
         name="Start date",
         code="start_date",
         type="date",
@@ -58,15 +66,15 @@ def create_product_class(apps, schema_editor):
     )
     AttributeOption.objects.create(
         group=group,
-        option='single_use'
+        option='Single use'
     )
     AttributeOption.objects.create(
         group=group,
-        option='multi_use'
+        option='Multi-use'
     )
     AttributeOption.objects.create(
         group=group,
-        option='once_per_customer'
+        option='Once per customer'
     )
 
     ProductAttribute.objects.create(

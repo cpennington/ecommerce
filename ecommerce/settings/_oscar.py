@@ -30,6 +30,7 @@ OSCAR_APPS = [
     'ecommerce.extensions.dashboard',
     'ecommerce.extensions.dashboard.orders',
     'ecommerce.extensions.dashboard.users',
+    'ecommerce.extensions.offer',
     'ecommerce.extensions.order',
     'ecommerce.extensions.partner',
     'ecommerce.extensions.payment',
@@ -76,6 +77,7 @@ OSCAR_ORDER_STATUS_CASCADE = {
 # lines in the order to determine which it can fulfill.
 FULFILLMENT_MODULES = [
     'ecommerce.extensions.fulfillment.modules.EnrollmentFulfillmentModule',
+    'ecommerce.extensions.fulfillment.modules.EnrollmentCodeFulfillmentModule',
 ]
 
 HAYSTACK_CONNECTIONS = {
@@ -109,6 +111,15 @@ PAYMENT_PROCESSOR_CONFIG = {
         'cancel_page_url': None,
     },
     'paypal': {
+        # 'mode' can be either 'sandbox' or 'live'
+        'mode': None,
+        'client_id': None,
+        'client_secret': None,
+        'receipt_url': None,
+        'cancel_url': None,
+        'error_url': None,
+    },
+    'invoice': {
         # 'mode' can be either 'sandbox' or 'live'
         'mode': None,
         'client_id': None,
@@ -244,5 +255,11 @@ OSCAR_DASHBOARD_NAVIGATION = [
 
 # Default timeout for Enrollment API calls
 ENROLLMENT_FULFILLMENT_TIMEOUT = 7
+
+# Course enrollment code length
+REGISTRATION_CODE_LENGTH = 8
+
+# Offer name prefix
+OFFER_NAME_PREFIX = "Offer for"
 
 THUMBNAIL_DEBUG = False

@@ -18,6 +18,7 @@ logger = logging.getLogger(__name__)
 
 BillingAddress = get_model('order', 'BillingAddress')
 Catalog = get_model('catalogue', 'Catalog')
+Invoice = get_model('invoice', 'Invoice')
 Line = get_model('order', 'Line')
 Order = get_model('order', 'Order')
 Product = get_model('catalogue', 'Product')
@@ -144,6 +145,13 @@ class RefundSerializer(serializers.ModelSerializer):
     class Meta(object):
         model = Refund
 
+
+class InvoiceSerializer(serializers.ModelSerializer):
+    """ Serializer for Invoice objects. """
+
+    class Meta(object):
+        model = Invoice
+    
 
 class CourseSerializer(serializers.HyperlinkedModelSerializer):
     id = serializers.RegexField(COURSE_ID_REGEX, max_length=255)
@@ -332,3 +340,20 @@ class CatalogSerializer(serializers.ModelSerializer):
             kwargs={'parent_lookup_stockrecords__catalogs': obj.id},
             request=self.context['request']
         )
+
+
+class EnrollmentCodeOrderSerializer(serializers.Serializer):
+    client = serializers.CharField(required=True, max_length=255)
+    stock_records = serializers.CharField(required=False, allow_blank=True, max_length=100)
+    quantity = serializers.IntegerField()
+    start_date = serializers.DateField()
+    end_date = serializers.DateField()
+    type = serializers.ChoiceField(
+        choices=(
+            ('Single use', _("Can be used once by one customer")),
+            ('Multi-use', _("Can be used multiple times by multiple customers")),
+            ('Once per customer', _("Can only be used once per customer"))
+        ),
+        allow_blank=False
+    )
+    price = serializers.IntegerField()
