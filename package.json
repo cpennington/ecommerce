@@ -1,5 +1,6 @@
 {
   "name": "edx-ecommerce",
+  "license": "AGPL-3.0",
   "repository": {
     "type": "git",
     "url": "git://github.com/edx/ecommerce"
