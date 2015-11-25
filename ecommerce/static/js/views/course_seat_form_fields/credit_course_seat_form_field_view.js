@@ -3,7 +3,7 @@
 define([
         'views/course_seat_form_fields/course_seat_form_field_view',
         'views/course_seat_form_fields/credit_course_seat_form_field_row_view',
-        'text!templates/credit_course_seat_form_field.html',
+        'raw!templates/credit_course_seat_form_field.html',
         'utils/course_utils',
         'utils/utils'
     ],

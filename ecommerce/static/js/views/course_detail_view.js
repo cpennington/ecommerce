@@ -4,11 +4,11 @@ define([
         'underscore',
         'underscore.string',
         'moment',
-        'text!templates/course_detail.html',
-        'text!templates/_course_seat.html',
-        'text!templates/_course_credit_seats.html',
+        'raw!templates/course_detail.html',
+        'raw!templates/_course_seat.html',
+        'raw!templates/_course_credit_seats.html',
         'utils/course_utils',
-        'ecommerce'
+        'shims/ecommerce'
     ],
     function ($,
               Backbone,

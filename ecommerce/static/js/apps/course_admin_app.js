@@ -2,7 +2,7 @@ require([
         'backbone',
         'routers/course_router',
         'collections/credit_provider_collection',
-        'ecommerce'
+        'shims/ecommerce'
     ],
     function (Backbone,
               CourseRouter,

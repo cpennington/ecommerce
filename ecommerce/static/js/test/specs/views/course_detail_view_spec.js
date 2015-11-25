@@ -4,7 +4,7 @@ define([
         'views/course_detail_view',
         'models/course_model',
         'collections/credit_provider_collection',
-        'ecommerce'
+        'shims/ecommerce'
     ],
     function ($,
               _s,

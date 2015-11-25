@@ -1,8 +1,8 @@
 define([
         'backbone',
         'backbone.stickit',
-        'text!templates/credit_course_seat_form_field_row.html',
-        'ecommerce'
+        'raw!templates/credit_course_seat_form_field_row.html',
+        'shims/ecommerce'
     ],
     function (Backbone,
               BackboneStickit,

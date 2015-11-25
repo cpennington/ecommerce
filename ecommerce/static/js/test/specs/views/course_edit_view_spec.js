@@ -7,7 +7,7 @@ define([
         'models/course_model',
         'utils/utils',
         'collections/credit_provider_collection',
-        'ecommerce'
+        'shims/ecommerce'
     ],
     function (_s,
               moment,

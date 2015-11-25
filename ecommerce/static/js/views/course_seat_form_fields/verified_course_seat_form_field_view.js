@@ -1,6 +1,6 @@
 define([
         'views/course_seat_form_fields/course_seat_form_field_view',
-        'text!templates/verified_course_seat_form_field.html'
+        'raw!templates/verified_course_seat_form_field.html'
     ],
     function (CourseSeatFormFieldView,
               FieldTemplate) {

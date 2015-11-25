@@ -4,7 +4,7 @@ define([
         'underscore',
         'underscore.string',
         'moment',
-        'text!templates/course_list.html',
+        'raw!templates/course_list.html',
         'dataTablesBootstrap'
     ],
     function ($,
