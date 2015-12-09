@@ -1,17 +1,17 @@
 <div class="col-sm-12">
-    <div class="seat-type"><%= gettext('Professional Education') %></div>
+    <div class="seat-type"><%- gettext('Professional Education') %></div>
 </div>
 <div class="col-sm-4">
     <input type="hidden" name="certificate_type" value="professional">
 
     <div class="seat-price">
         <div class="form-group">
-            <label for="price"><%= gettext('Price (in USD)') %></label>
+            <label for="price"><%- gettext('Price (in USD)') %></label>
 
             <div class="input-group">
                 <div class="input-group-addon">$</div>
                 <input type="number" class="form-control" name="price" id="price" min="5" step="1" pattern="\d+"
-                       value="<%= price %>">
+                       value="<%- price %>">
             </div>
             <!-- NOTE: This help-block is here for validation messages. -->
             <span class="help-block"></span>
@@ -20,10 +20,10 @@
 
     <div class="expires">
         <div class="form-group">
-            <label for="expires"><%= gettext('Upgrade Deadline') %></label>
+            <label for="expires"><%- gettext('Upgrade Deadline') %></label>
 
             <div class="input-group" data-toggle="tooltip"
-                 title="<%= gettext('Professional education courses have no upgrade deadline.') %>">
+                 title="<%- gettext('Professional education courses have no upgrade deadline.') %>">
                 <div class="input-group-addon"><i class="fa fa-calendar" aria-hidden="true"></i></div>
                 <input type="datetime-local" id="expires" name="expires" class="form-control"
                        aria-describedby="expiresHelpBlock" disabled="disabled">
@@ -31,17 +31,20 @@
             <!-- NOTE: This help-block is here for validation messages. -->
             <span class="help-block"></span>
         <span id="expiresHelpBlock" class="help-block">
-            <%= gettext('After this date/time, students can no longer enroll in this track.') %>
+            <%- gettext('After this date/time, students can no longer enroll in this track.') %>
+        </span>
+        <span class="help-block">
+            <%- gettext('Change the upgrade deadline for this course. The default deadline is 10 days before the course end date and time.') %>
         </span>
         </div>
     </div>
 </div>
 <div class="col-sm-4 seat-certificate-type">
-    <%= gettext('Professional Education Certificate') %>
+    <%- gettext('Professional Education Certificate') %>
 </div>
 <div class="col-sm-4 seat-additional-info">
     <div class="form-group">
-        <label for="id_verification_required"><%= gettext('ID Verification Required?') %></label>
+        <label for="id_verification_required"><%- gettext('ID Verification Required?') %></label>
 
         <div class="input-group">
             <label class="radio-inline">
