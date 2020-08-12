@@ -387,7 +387,7 @@ class Cybersource(ApplePayMixin, BaseClientSidePaymentProcessor):
         Returns:
             HandledProcessorResponse
         """
-        _response = self.normalize_processor_response(response)
+        _response = self._normalize_processor_response(response)
 
         if _response != Decision.accept:
             if _response.duplicate_payment:
