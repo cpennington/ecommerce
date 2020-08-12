@@ -689,11 +689,13 @@ class CybersourceREST(Cybersource):
 
         _response = UnhandledCybersourceResponse(
             decision=decision,
-            duplicate_payment=False,
+            duplicate_payment=(
+                decision == Decision.error and
+                response.reason == 'DUPLICATE_REQUEST'
+            ),
             partial_authorization=(
-                'auth_amount' in response and
-                response['auth_amount'] and
-                response['auth_amount'] != response['req_amount']
+                response.amount_details.authorized_amount and
+                response.amount_details.authorized_amount != response.amount_details.total_amount
             ),
             currency=response.order_information.amount_details.currency,
             total=Decimal(response.order_information.amount_details.total_amount),
