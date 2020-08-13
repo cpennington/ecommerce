@@ -298,7 +298,7 @@ class CybersourceOrderCompletionView(EdxOrderPlacementMixin):
             try:
                 logger.info(
                     'Received CyberSource payment notification for transaction [%s], associated with order [%s]'
-                    ' and basket [%d].',
+                    ' and basket [%s].',
                     self.transaction_id,
                     self.order_number,
                     self.basket_id
