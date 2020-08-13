@@ -342,7 +342,7 @@ class Cybersource(ApplePayMixin, BaseClientSidePaymentProcessor):
         # Raise an exception for payments that were not accepted. Consuming code should be responsible for handling
         # and logging the exception.
         try:
-            decision = Decision(response['decision'])
+            decision = Decision(response['decision'].upper())
         except ValueError:
             decision = Decision.invalid
 
