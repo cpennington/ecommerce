@@ -389,7 +389,7 @@ class Cybersource(ApplePayMixin, BaseClientSidePaymentProcessor):
         """
         _response = self._normalize_processor_response(response)
 
-        if _response != Decision.accept:
+        if _response.decision != Decision.accept:
             if _response.duplicate_payment:
                 # This means user submitted payment request twice within 15 min.
                 # We need to check if user first payment notification was handled successfuly and user has an order
