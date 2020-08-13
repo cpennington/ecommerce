@@ -596,6 +596,7 @@ class CybersourceInterstitialView(CyberSourceProcessorMixin, CybersourceOrderCom
                 self.transaction_id,
                 self.order_number,
             )
+            return self.redirect_to_payment_error()
 
         return self.complete_order(notification)
 
