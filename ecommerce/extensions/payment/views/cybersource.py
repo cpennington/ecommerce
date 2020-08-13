@@ -369,7 +369,7 @@ class CybersourceOrderCompletionView(EdxOrderPlacementMixin):
         )
         bundle = bundle_attributes.first().value_text if bundle_attributes.count() > 0 else None
 
-        new_basket = Basket.objects.create(owner=old_basket.owner, site=self.request)
+        new_basket = Basket.objects.create(owner=old_basket.owner, site=self.request.site)
 
         # We intentionally avoid thawing the old basket here to prevent order
         # numbers from being reused. For more, refer to commit a1efc68.
