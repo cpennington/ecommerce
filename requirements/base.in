@@ -26,8 +26,7 @@ edx-django-release-util
 edx-django-utils
 edx-drf-extensions
 edx-django-sites-extensions
-#edx-ecommerce-worker
-git+https://github.com/edx/ecommerce-worker.git@upgrade-celery#egg=edx-ecommerce-worker
+edx-ecommerce-worker
 edx-opaque-keys
 edx-rbac
 edx-rest-api-client
